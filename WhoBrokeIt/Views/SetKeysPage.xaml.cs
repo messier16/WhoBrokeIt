@@ -29,9 +29,6 @@ namespace WhoBrokeIt.UI.Views
 			accMgr.SaveTokenForInstance(InstanceEntry.Text, TokentEntry.Text);
 
 			await Navigation.PushAsync(new ProjectListPage(projects));
-
-			//System.Diagnostics.Debug.WriteLine("Projects " + projects.Count);
-			// xuptijufrkzdbtsiaupl2oitwqt3jxnkr6ab5lx3ewuzzzeeap5q
 		}
 	}
 }
