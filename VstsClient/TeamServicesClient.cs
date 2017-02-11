@@ -13,8 +13,9 @@ namespace Messier16.VstsClient
 		const string Version = "1.0";
 		private const string BaseAddress = "https://{0}.visualstudio.com/DefaultCollection";
 		private const string ListOfProjects = "_apis/projects?api-version=" + Version; //"[&stateFilter{string}&$top={integer}&skip={integer}]"
-		#endregion
-		private string _endpoint;
+        private const string Project = "_apis/projects/{0}?api-version=" + Version +"&includeCapabilities=true";
+        #endregion
+        private string _endpoint;
 		private string _token;
 		private HttpClient _client; 
 
@@ -35,14 +36,28 @@ namespace Messier16.VstsClient
 					 System.Text.Encoding.UTF8.GetBytes(
 						 string.Format(":" + token)));
 			return new AuthenticationHeaderValue("Basic", b64);
-		}
+        }
 
-		public async Task<ProjectList> GetProjects()
-		{
-			string response = await _client.GetStringAsync(ListOfProjects);
-			var actualResponse = DeserializeObject<ProjectList>(response);
-			return actualResponse;
-		}
+        public async Task<int> Probe()
+        {
+            var response = await _client.GetAsync(ListOfProjects);
+            return (int)response.StatusCode;
+        }
 
-	}
+        public async Task<ProjectList> GetProjects()
+        {
+            string response = await _client.GetStringAsync(ListOfProjects);
+            var actualResponse = DeserializeObject<ProjectList>(response);
+            return actualResponse;
+        }
+
+        public async Task<FullProject> GetProject(string projectId)
+        {
+            var requestUrl = String.Format(Project, projectId);
+            string response = await _client.GetStringAsync(requestUrl);
+            var actualResponse = DeserializeObject<FullProject>(response);
+            return actualResponse;
+        }
+
+    }
 }

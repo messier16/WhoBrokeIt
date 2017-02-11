@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Messier16.VstsClient.Objects
 {
-	public class ProjectBasic
+	public class BasicProject
 	{
 		public string Id { get; set; }
 		public string Name { get; set; }
