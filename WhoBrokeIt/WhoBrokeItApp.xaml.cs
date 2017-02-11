@@ -7,10 +7,10 @@ namespace WhoBrokeIt.UI
 {
 	public partial class WhoBrokeItApp : Application
 	{
-		public WhoBrokeItApp()
+		public WhoBrokeItApp(string instance, string token)
 		{
 			InitializeComponent();
-			MainPage = new NavigationPage(new SetKeysPage());
+			MainPage = new NavigationPage(new SetKeysPage(instance, token));
 		}
 
 		#region Resources

@@ -9,12 +9,11 @@ namespace WhoBrokeIt.UI.Views
 {
 	public partial class SetKeysPage : ContentPage
 	{
-		public SetKeysPage()
+		public SetKeysPage(string instance = null, string token = null)
 		{
 			InitializeComponent();
-			var accMgr = DependencyService.Get<IAccountManager>();
-			InstanceEntry.Text = Settings.VisualStudioInstance;
-			TokentEntry.Text = accMgr.GetTokenForInstance(InstanceEntry.Text);
+			InstanceEntry.Text = instance ?? "";
+			TokentEntry.Text = token ?? "";
 		}
 
 		async void Handle_Clicked(object sender, System.EventArgs e)

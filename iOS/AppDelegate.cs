@@ -4,6 +4,8 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using WhoBrokeIt.iOS.Services;
+using WhoBrokeIt.UI.Helpers;
 
 namespace WhoBrokeIt.iOS
 {
@@ -14,7 +16,13 @@ namespace WhoBrokeIt.iOS
 		{
 			global::Xamarin.Forms.Forms.Init();
 
-			LoadApplication(new UI.WhoBrokeItApp());
+			var accountManager = new AccountManagerImplementation();
+			var instance = Settings.VisualStudioInstance;
+			var tokent = accountManager.GetTokenForInstance(instance);
+
+			var formsApp = new UI.WhoBrokeItApp(instance, tokent);
+
+			LoadApplication(formsApp);
 
 			return base.FinishedLaunching(app, options);
 		}
