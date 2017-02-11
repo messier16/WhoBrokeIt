@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+		xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="WhoBrokeIt.UI.Views.SetKeysPage"
+		BackgroundColor="{StaticResource VisualStudioColor}">
+	<StackLayout Spacing="20" Margin="20">
+		<Entry x:Name="InstanceEntry" 
+			Keyboard="Default"
+			Placeholder=".visualstudio.com"></Entry>
+		<Editor x:Name="TokentEntry"
+			Keyboard="Text"></Editor>
+		<Button x:Name="ContinueButton" Text="Continue"></Button>
+	</StackLayout>
+</ContentPage>
