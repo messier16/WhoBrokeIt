@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-
-using static WhoBrokeIt.UI.Helpers.Settings;
-
+using Messier16.VstsClient;
+using WhoBrokeIt.UI.Helpers;
+using WhoBrokeIt.UI.Services;
 using Xamarin.Forms;
 
 namespace WhoBrokeIt.UI.Views
@@ -12,12 +12,26 @@ namespace WhoBrokeIt.UI.Views
 		public SetKeysPage()
 		{
 			InitializeComponent();
-			InstanceEntry.Text = VisualStudioInstance;
+			var accMgr = DependencyService.Get<IAccountManager>();
+			InstanceEntry.Text = Settings.VisualStudioInstance;
+			TokentEntry.Text = accMgr.GetTokenForInstance(InstanceEntry.Text);
 		}
 
-		void Handle_Clicked(object sender, System.EventArgs e)
+		async void Handle_Clicked(object sender, System.EventArgs e)
 		{
-			VisualStudioInstance = InstanceEntry.Text;
+			Settings.VisualStudioInstance = InstanceEntry.Text;
+
+			var client = new TeamServicesClient(InstanceEntry.Text,
+												TokentEntry.Text);
+			var projects = await client.GetProjects();
+
+			var accMgr = DependencyService.Get<IAccountManager>();
+			accMgr.SaveTokenForInstance(InstanceEntry.Text, TokentEntry.Text);
+
+			await Navigation.PushAsync(new ProjectListPage(projects));
+
+			//System.Diagnostics.Debug.WriteLine("Projects " + projects.Count);
+			// xuptijufrkzdbtsiaupl2oitwqt3jxnkr6ab5lx3ewuzzzeeap5q
 		}
 	}
 }

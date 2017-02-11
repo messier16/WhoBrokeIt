@@ -3,7 +3,9 @@ using System.Linq;
 using System.Collections.Generic;
 using WhoBrokeIt.UI.Services;
 using Xamarin.Auth;
+using WhoBrokeIt.Droid.Services;
 
+[assembly: Xamarin.Forms.Dependency(typeof(AccountManagerImplementation))]
 namespace WhoBrokeIt.Droid.Services
 {
 	public class AccountManagerImplementation : IAccountManager
