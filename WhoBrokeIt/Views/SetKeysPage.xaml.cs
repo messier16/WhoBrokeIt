@@ -9,25 +9,24 @@ namespace WhoBrokeIt.UI.Views
 {
 	public partial class SetKeysPage : ContentPage
 	{
-		public SetKeysPage(string instance = null, string token = null)
+		public SetKeysPage()
 		{
 			InitializeComponent();
-			InstanceEntry.Text = instance ?? "";
-			TokentEntry.Text = token ?? "";
+            InstanceEntry.Text = Settings.VisualStudioInstance;
 		}
 
 		async void Handle_Clicked(object sender, System.EventArgs e)
 		{
 			Settings.VisualStudioInstance = InstanceEntry.Text;
 
-			var client = new TeamServicesClient(InstanceEntry.Text,
+            // Replace client
+			WhoBrokeItApp.RealCurrent.Client = new TeamServicesClient(InstanceEntry.Text,
 												TokentEntry.Text);
-			var projects = await client.GetProjects();
-
+            // TODO: check credentials
 			var accMgr = DependencyService.Get<IAccountManager>();
 			accMgr.SaveTokenForInstance(InstanceEntry.Text, TokentEntry.Text);
 
-			await Navigation.PushAsync(new ProjectListPage(projects));
+			await Navigation.PushAsync(new ProjectListPage());
 		}
 	}
 }

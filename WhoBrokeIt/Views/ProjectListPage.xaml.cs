@@ -7,10 +7,22 @@ namespace WhoBrokeIt.UI.Views
 {
 	public partial class ProjectListPage : ContentPage
 	{
-		public ProjectListPage(ProjectList list)
+        bool _firstLoad;
+		public ProjectListPage()
 		{
+            _firstLoad = true;
 			InitializeComponent();
-			Projects.ItemsSource = list.Value;
 		}
-	}
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            if (!_firstLoad) return;
+
+            var client = WhoBrokeItApp.RealCurrent.Client;
+            var projects = await client.GetProjects();
+            Projects.ItemsSource = projects.Value;
+            _firstLoad = false;
+        }
+    }
 }
