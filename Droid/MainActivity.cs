@@ -7,6 +7,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using WhoBrokeIt.Droid.Services;
 
 namespace WhoBrokeIt.Droid
 {
@@ -22,7 +23,14 @@ namespace WhoBrokeIt.Droid
 
 			global::Xamarin.Forms.Forms.Init(this, bundle);
 
-			LoadApplication(new UI.WhoBrokeItApp());
+
+            var accountManager = new AccountManagerImplementation();
+            var instance = WhoBrokeIt.UI.Helpers.Settings.VisualStudioInstance;
+            var tokent = accountManager.GetTokenForInstance(instance);
+
+            var formsApp = new UI.WhoBrokeItApp(instance, tokent);
+            
+            LoadApplication(formsApp);
 		}
 	}
 }
