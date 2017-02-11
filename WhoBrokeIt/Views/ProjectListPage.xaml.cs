@@ -5,14 +5,14 @@ using Xamarin.Forms;
 
 namespace WhoBrokeIt.UI.Views
 {
-	public partial class ProjectListPage : ContentPage
-	{
+    public partial class ProjectListPage : ContentPage
+    {
         bool _firstLoad;
-		public ProjectListPage()
-		{
+        public ProjectListPage()
+        {
             _firstLoad = true;
-			InitializeComponent();
-		}
+            InitializeComponent();
+        }
 
         protected override async void OnAppearing()
         {
@@ -23,6 +23,15 @@ namespace WhoBrokeIt.UI.Views
             var projects = await client.GetProjects();
             Projects.ItemsSource = projects.Value;
             _firstLoad = false;
+        }
+
+        private async void ProjectSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            if (Projects.SelectedItem == null) return;
+
+            var project = Projects.SelectedItem as BasicProject;
+            await Navigation.PushAsync(new ProjectDetailsPage(project.Id));
+            Projects.SelectedItem = null;
         }
     }
 }

@@ -3,7 +3,7 @@
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 		x:Class="WhoBrokeIt.UI.Views.ProjectListPage">
 	<ContentPage.Content>
-		<ListView x:Name="Projects">
+		<ListView x:Name="Projects" ItemSelected="ProjectSelected" >
 			<ListView.ItemTemplate>
 			<DataTemplate>
 					<TextCell Text="{Binding Name}"></TextCell>
