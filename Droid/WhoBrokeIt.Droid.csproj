@@ -85,7 +85,7 @@
   <ItemGroup>
     <ProjectReference Include="..\WhoBrokeIt\WhoBrokeIt.csproj">
       <Project>{497BD353-6708-4C6F-9C9D-25EB7C52DFDB}</Project>
-      <Name>WhoBrokeIt</Name>
+      <Name>WhoBrokeIt.UI</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
