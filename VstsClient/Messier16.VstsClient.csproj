@@ -34,6 +34,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Objects\ProjectList.cs" />
     <Compile Include="Objects\BasicProject.cs" />
+    <Compile Include="Objects\BuildList.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

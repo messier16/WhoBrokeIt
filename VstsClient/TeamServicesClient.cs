@@ -14,6 +14,7 @@ namespace Messier16.VstsClient
 		private const string BaseAddress = "https://{0}.visualstudio.com/DefaultCollection";
 		private const string ListOfProjects = "_apis/projects?api-version=" + Version; //"[&stateFilter{string}&$top={integer}&skip={integer}]"
         private const string Project = "_apis/projects/{0}?api-version=" + Version +"&includeCapabilities=true";
+		private const string BuildDefinitions = "{0}/_apis/build/definitions?api-version=2.0";
         #endregion
         private string _endpoint;
 		private string _token;
@@ -58,6 +59,14 @@ namespace Messier16.VstsClient
             var actualResponse = DeserializeObject<FullProject>(response);
             return actualResponse;
         }
+
+		public async Task<BuildList> BuildsForProject(string projectId)
+		{
+			var requestUrl = String.Format(BuildDefinitions, projectId);
+			string response = await _client.GetStringAsync(requestUrl);
+			var actualResponse = DeserializeObject<BuildList>(response);
+			return actualResponse;
+		}
 
     }
 }
