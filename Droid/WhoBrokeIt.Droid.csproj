@@ -131,6 +131,11 @@
     <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\build_definition.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\build_definition.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\build_definition.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\build_definition.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\build_definition.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Services\" />
