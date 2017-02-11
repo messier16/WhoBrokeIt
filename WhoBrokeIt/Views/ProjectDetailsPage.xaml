@@ -4,6 +4,7 @@
              x:Class="WhoBrokeIt.UI.Views.ProjectDetailsPage">
     <StackLayout>
         <Label x:Name="DescriptionLabel"></Label>
+        <Label x:Name="SourceControlLabel"></Label>
 		<StackLayout x:Name="BuildDefsStack" ></StackLayout>
     </StackLayout>
 </ContentPage>

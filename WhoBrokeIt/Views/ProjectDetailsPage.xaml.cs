@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Messier16.VstsClient.Objects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,14 +24,16 @@ namespace WhoBrokeIt.UI.Views
 			var client = WhoBrokeItApp.RealCurrent.Client;
             var project = await client.GetProject(_projectId);
             Title = project.Name;
+            SourceControlLabel.Text = project?.DefaultTeam?.Name;
             DescriptionLabel.Text = project.Description;
 
-			var definitions = await client.BuildsForProject(_projectId);
+			var definitions = await client.GetBuildDefinitions(_projectId);
 			if (definitions.Count > 0)
 			{
 				foreach (var def in definitions.Value)
 				{
 					var buildDefView = new BuildDefinition();
+                    buildDefView.BuildTapped += BuildDefView_BuildTapped;
 					buildDefView.BindingContext = def;
 					BuildDefsStack.Children.Add(buildDefView);
 				}
@@ -40,6 +43,11 @@ namespace WhoBrokeIt.UI.Views
 				BuildDefsStack.Children.Add(
 					new Image { Source = "build_definition" });
 			}
+        }
+
+        private async void BuildDefView_BuildTapped(object sender, BasicBuildDefinition e)
+        {
+            await Navigation.PushAsync(new BuildsPage(_projectId, e.Id.ToString()));
         }
     }
 }
