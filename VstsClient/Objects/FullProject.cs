@@ -23,18 +23,6 @@ namespace Messier16.VstsClient.Objects
         public ProcessTemplate ProcessTemplate { get; set; }
     }
 
-    public class Link
-    {
-        public string Href { get; set; }
-    }
-
-    public class Links
-    {
-        public Link Self { get; set; }
-        public Link Collection { get; set; }
-        public Link Web { get; set; }
-    }
-
     public class DefaultTeam
     {
         public string Id { get; set; }

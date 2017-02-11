@@ -3,13 +3,8 @@ using System.Collections.Generic;
 
 namespace Messier16.VstsClient.Objects
 {
-	public class User
+	public class BuildDefinitionUser : User
 	{
-		public string Id { get; set; }
-		public string DisplayName { get; set; }
-		public string UniqueName { get; set; }
-		public string Url { get; set; }
-		public string ImageUrl { get; set; }
 		public bool IsContainer { get; set; }
 	}
 
@@ -27,15 +22,10 @@ namespace Messier16.VstsClient.Objects
 		public string Name { get; set; }
 	}
 
-	public class BuildProject : BasicProject
-	{
-		public int Revision { get; set; }
-	}
-
-	public class BasicBuild
+	public class BasicBuildDefinition
 	{
 		public string quality { get; set; }
-		public User AuthoredBy { get; set; }
+		public BuildDefinitionUser AuthoredBy { get; set; }
 		public Queue queue { get; set; }
 		public string Uri { get; set; }
 		public string Type { get; set; }
@@ -43,13 +33,13 @@ namespace Messier16.VstsClient.Objects
 		public int Id { get; set; }
 		public string Name { get; set; }
 		public string Url { get; set; }
-		public BuildProject project { get; set; }
+		public BasicProject project { get; set; }
 	}
 
-	public class BuildList
+	public class BuildDefinitionsList
 	{
 		public int Count { get; set; }
-		public List<BasicBuild> Value { get; set; }
+		public List<BasicBuildDefinition> Value { get; set; }
 	}
 }
 
