@@ -161,6 +161,11 @@
     <AndroidResource Include="Resources\drawable-xxxhdpi\git.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\settings.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\tfvc.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\info.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\info.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\info.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\info.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\info.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Services\" />
