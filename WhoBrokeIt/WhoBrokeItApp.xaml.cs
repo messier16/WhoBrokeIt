@@ -15,16 +15,16 @@ namespace WhoBrokeIt.UI
 
             Page startingPage;
 
-			//startingPage = new SetKeysPage();
-            if(String.IsNullOrEmpty(instance) || String.IsNullOrEmpty(token))
-            {
-                startingPage = new SetKeysPage();
-            }
-            else
-            {
-                Client = new TeamServicesClient(instance, token);
-                startingPage = new ProjectListPage();
-            }
+			startingPage = new SetKeysPage();
+            //if(String.IsNullOrEmpty(instance) || String.IsNullOrEmpty(token))
+            //{
+            //    startingPage = new SetKeysPage();
+            //}
+            //else
+            //{
+            //    Client = new TeamServicesClient(instance, token);
+            //    startingPage = new ProjectListPage();
+            //}
 
 			var navMainPage = new NavigationPage(startingPage);
 

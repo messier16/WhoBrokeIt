@@ -16,7 +16,15 @@ namespace WhoBrokeIt.UI.Views
             _firstLoad = true;
 			NavigationPage.SetBackButtonTitle(this, "");
 			Title = Settings.VisualStudioInstance;
+
             InitializeComponent();
+
+			ToolbarItem settingsButton = new ToolbarItem
+			{
+				Text = "Settings",
+				Icon = "settings"
+			};
+			ToolbarItems.Add(settingsButton);
         }
 
         protected override async void OnAppearing()
