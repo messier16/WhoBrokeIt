@@ -39,6 +39,7 @@
     <Compile Include="Objects\BasicProject.cs" />
     <Compile Include="Objects\BuildDefinitionsList.cs" />
     <Compile Include="Objects\RepositoriesList.cs" />
+    <Compile Include="Objects\CommitList.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

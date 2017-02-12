@@ -17,6 +17,7 @@ namespace Messier16.VstsClient
 		private const string BuildDefinitions = "{0}/_apis/build/definitions?api-version=2.0";
 		private const string PerProjectRepositories = "{0}/_apis/git/repositories?api-version=1.0";
         private const string Builds = "{0}/_apis/build/builds?definitions={1}&api-version=2.0";
+		private const string CommitsForRepo = "_apis/git/repositories/{0}/commits?api-version=1.0";
         #endregion
         private string _endpoint;
 		private string _token;
@@ -83,6 +84,14 @@ namespace Messier16.VstsClient
 			var requestUrl = String.Format(PerProjectRepositories, projectId);
 			string response = await _client.GetStringAsync(requestUrl);
 			var actualResponse = DeserializeObject<RepositoriesList>(response);
+			return actualResponse;
+		}
+
+		public async Task<CommitList> GetCommits(string repoId)
+		{
+			var requestUrl = String.Format(CommitsForRepo, repoId);
+			string response = await _client.GetStringAsync(requestUrl);
+			var actualResponse = DeserializeObject<CommitList>(response);
 			return actualResponse;
 		}
     }
