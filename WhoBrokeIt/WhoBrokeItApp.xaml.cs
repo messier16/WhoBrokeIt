@@ -14,6 +14,8 @@ namespace WhoBrokeIt.UI
 
 
             Page startingPage;
+
+			//startingPage = new SetKeysPage();
             if(String.IsNullOrEmpty(instance) || String.IsNullOrEmpty(token))
             {
                 startingPage = new SetKeysPage();
@@ -24,13 +26,19 @@ namespace WhoBrokeIt.UI
                 startingPage = new ProjectListPage();
             }
 
-            MainPage = new NavigationPage(startingPage);
+			var navMainPage = new NavigationPage(startingPage);
+
+			navMainPage.BarBackgroundColor = VisualStudioColor;
+			navMainPage.BarTextColor = Color.White;
+
+			MainPage = navMainPage;
 		}
 
         public TeamServicesClient Client { get; set; }
 
         #region Resources
         public Color VisualStudioColor => (Color)Resources["VisualStudioColor"];
+		public Color VisualStudioBackgroundColor => (Color)Resources["VisualStudioBackgroundColor"];
 		#endregion
 
 		public static WhoBrokeItApp RealCurrent

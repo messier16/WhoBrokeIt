@@ -3,8 +3,10 @@
 		xmlns="http://xamarin.com/schemas/2014/forms" 
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 		x:Class="WhoBrokeIt.UI.Views.SetKeysPage"
-		BackgroundColor="{StaticResource VisualStudioColor}">
+		Style="{StaticResource AppPage}"
+		Title="Instance info">
 	<StackLayout Spacing="20" Margin="20">
+		<Image Source="visual_studio"></Image>
 		<Entry x:Name="InstanceEntry" 
 			Keyboard="Default"
 			Placeholder=".visualstudio.com"></Entry>

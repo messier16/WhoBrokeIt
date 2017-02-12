@@ -6,6 +6,12 @@
 	<Application.Resources>
 		<ResourceDictionary>
 			<Color x:Key="VisualStudioColor">#68217A</Color>
+			<Color x:Key="VisualStudioBackgroundColor">#EEEEF2</Color>
+
+
+            <Style x:Key="AppPage" TargetType="ContentPage">
+                <Setter Property="BackgroundColor" Value="{StaticResource VisualStudioBackgroundColor}" />
+            </Style>
 		</ResourceDictionary>
 	</Application.Resources>
 </Application>

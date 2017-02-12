@@ -24,8 +24,20 @@ namespace WhoBrokeIt.UI.Views
 			var client = WhoBrokeItApp.RealCurrent.Client;
             var project = await client.GetProject(_projectId);
             Title = project.Name;
-            SourceControlLabel.Text = project?.DefaultTeam?.Name;
-            DescriptionLabel.Text = project.Description;
+			SourceControlLabel.Text = project.Capabilities?.Versioncontrol?.SourceControlType;
+			DescriptionLabel.Text = project.Description;
+
+			var repos = await client.GetRepositories(_projectId);
+
+
+			ReposCount.Text = repos.Value.FirstOrDefault()?.Id;
+			var tg = new TapGestureRecognizer( async (v) => 
+			{
+				var repo = v as Label;
+				await Navigation.PushAsync(new RepositoryDetailPage(repo.Text));
+			});
+			ReposCount.GestureRecognizers.Add(tg);
+
 
 			var definitions = await client.GetBuildDefinitions(_projectId);
 			if (definitions.Count > 0)

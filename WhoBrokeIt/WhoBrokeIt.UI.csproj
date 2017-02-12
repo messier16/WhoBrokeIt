@@ -51,6 +51,9 @@
     <Compile Include="Controls\BuildDefinition.xaml.cs">
       <DependentUpon>BuildDefinition.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\RepositoryDetailPage.xaml.cs">
+      <DependentUpon>RepositoryDetailPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
@@ -85,6 +88,9 @@
     <EmbeddedResource Include="Views\BuildsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\RepositoryDetailPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
