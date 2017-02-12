@@ -6,6 +6,7 @@ using Foundation;
 using UIKit;
 using WhoBrokeIt.iOS.Services;
 using WhoBrokeIt.UI.Helpers;
+using Xamarin.Forms.Platform.iOS;
 
 namespace WhoBrokeIt.iOS
 {
@@ -21,6 +22,9 @@ namespace WhoBrokeIt.iOS
 			var tokent = accountManager.GetTokenForInstance(instance);
 
 			var formsApp = new UI.WhoBrokeItApp(instance, tokent);
+
+			UIView.Appearance.TintColor = formsApp.VisualStudioColor.ToUIColor();
+			UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.LightContent,true);
 
 			LoadApplication(formsApp);
 

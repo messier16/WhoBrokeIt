@@ -146,6 +146,21 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\visual_studio.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\arrow_right.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\visual_studio.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\git.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\settings.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\tfvc.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\git.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\settings.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\tfvc.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\git.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\settings.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\tfvc.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\git.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\settings.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\tfvc.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\git.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\settings.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\tfvc.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Services\" />
