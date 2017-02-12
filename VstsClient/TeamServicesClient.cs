@@ -15,6 +15,7 @@ namespace Messier16.VstsClient
 		private const string ListOfProjects = "_apis/projects?api-version=" + Version; //"[&stateFilter{string}&$top={integer}&skip={integer}]"
         private const string Project = "_apis/projects/{0}?api-version=" + Version +"&includeCapabilities=true";
 		private const string BuildDefinitions = "{0}/_apis/build/definitions?api-version=2.0";
+		private const string PerProjectRepositories = "{0}/_apis/git/repositories?api-version=1.0";
         private const string Builds = "{0}/_apis/build/builds?definitions={1}&api-version=2.0";
         #endregion
         private string _endpoint;
@@ -69,15 +70,20 @@ namespace Messier16.VstsClient
 			return actualResponse;
         }
 
-        public async Task<BuildsList> GetBuilds(string projectId, string definition)
-        {
-            var requestUrl = String.Format(Builds, projectId, definition);
-            string response = await _client.GetStringAsync(requestUrl);
-            var actualResponse = DeserializeObject<BuildsList>(response);
-            return actualResponse;
-        }
+		public async Task<BuildsList> GetBuilds(string projectId, string definition)
+		{
+			var requestUrl = String.Format(Builds, projectId, definition);
+			string response = await _client.GetStringAsync(requestUrl);
+			var actualResponse = DeserializeObject<BuildsList>(response);
+			return actualResponse;
+		}
 
-
-
+		public async Task<RepositoriesList> GetRepositories(string projectId)
+		{
+			var requestUrl = String.Format(PerProjectRepositories, projectId);
+			string response = await _client.GetStringAsync(requestUrl);
+			var actualResponse = DeserializeObject<RepositoriesList>(response);
+			return actualResponse;
+		}
     }
 }
