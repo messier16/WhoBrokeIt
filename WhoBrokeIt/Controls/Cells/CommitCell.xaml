@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="WhoBrokeIt.UI.Controls.Cells.CommitCell">
+
+	<Grid Padding="10" >
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"></ColumnDefinition>
+			<ColumnDefinition Width="*"></ColumnDefinition>
+			<ColumnDefinition Width="*"></ColumnDefinition>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"></RowDefinition>
+			<RowDefinition Height="Auto"></RowDefinition>
+			<RowDefinition Height="50"></RowDefinition>
+		</Grid.RowDefinitions>
+
+		<Label Grid.Row="0" Grid.ColumnSpan="3" x:Name="CommitAuthorLabel"></Label>
+		<Label Grid.Row="1" Grid.ColumnSpan="3" FontSize="Small" x:Name="CommitDescriptionLabel"></Label>
+
+		<Label Grid.Row="2" Grid.Column="0" x:Name="EditionsLabel"></Label>
+		<Label Grid.Row="2" Grid.Column="1" x:Name="AdditionsLabel"></Label>
+		<Label Grid.Row="2" Grid.Column="2" x:Name="DeletionsLabel"></Label>
+	</Grid>
+</ViewCell>
