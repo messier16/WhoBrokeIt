@@ -3,9 +3,10 @@
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 		xmlns:cells="clr-namespace:WhoBrokeIt.UI.Controls.Cells" 
 		Style="{StaticResource AppPage}"
-		x:Class="WhoBrokeIt.UI.Views.RepositoryDetailPage">
+		x:Class="WhoBrokeIt.UI.Views.RepositoryDetailPage"
+             Title="Commits">
 	<ContentPage.Content>
-		<ListView x:Name="CommitList" HasUnevenRows="true" RowHeight="-1">
+		<ListView x:Name="CommitList" HasUnevenRows="true" RowHeight="-1" >
 			<ListView.ItemTemplate>
 				<DataTemplate>
 					<cells:CommitCell></cells:CommitCell>

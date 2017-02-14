@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Messier16.VstsClient.Objects;
 using Xamarin.Forms;
+using Humanizer;
 
 namespace WhoBrokeIt.UI.Controls.Cells
 {
@@ -19,7 +20,15 @@ namespace WhoBrokeIt.UI.Controls.Cells
 			var commit = BindingContext as Commit;
 			if (commit != null)
 			{
-				CommitDateTimeLabel.Text = commit.Committer.Date.ToLocalTime().LocalDateTime.ToString();
+			    var commitDate = commit.Committer.Date.ToLocalTime().LocalDateTime;
+                if (commitDate > DateTime.Today.AddDays(-1))
+                {
+                    CommitDateTimeLabel.Text = commitDate.Humanize(false, DateTime.Now);
+                }
+                else
+                {
+                    CommitDateTimeLabel.Text = String.Format("{0:dddd dd, MMMM yyyy at HH:mm}", commitDate);
+                }
 				CommitAuthorLabel.Text = commit.Author.Name;
 				CommitDescriptionLabel.Text = commit.Comment;
 				EditionsLabel.Text = commit.ChangeCounts.Edit?.ToString() ?? "-";

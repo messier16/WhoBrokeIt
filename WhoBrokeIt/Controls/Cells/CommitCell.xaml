@@ -1,39 +1,39 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ViewCell xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="WhoBrokeIt.UI.Controls.Cells.CommitCell">
-	<Grid RowSpacing="0" ColumnSpacing="0" Padding="0">
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="*" />
-			<ColumnDefinition Width="*" />
-			<ColumnDefinition Width="*" />
-		</Grid.ColumnDefinitions>
-		<Grid.RowDefinitions>
-			<RowDefinition Height="Auto" />
-			<RowDefinition Height="Auto" />
-			<RowDefinition Height="Auto" />
-			<RowDefinition Height="20">
-			</RowDefinition>
-		</Grid.RowDefinitions>
+  <Grid RowSpacing="0" ColumnSpacing="0" Padding="0">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="20">
+      </RowDefinition>
+    </Grid.RowDefinitions>
 
-		<Label Grid.Row="0" Grid.ColumnSpan="3"  FontSize="Micro"  x:Name="CommitDateTimeLabel" />
-		<Label Grid.Row="1" Grid.ColumnSpan="3" x:Name="CommitAuthorLabel" />
-		<Label Grid.Row="2" Grid.ColumnSpan="3" FontSize="Small" x:Name="CommitDescriptionLabel" />
-		
-		<StackLayout Grid.Row="3" Grid.Column="0" BackgroundColor="#FFF7B4" Orientation="Horizontal">
-			<Image HorizontalOptions="EndAndExpand" Source="small_edit"></Image>
-			<Label HorizontalOptions="StartAndExpand" x:Name="EditionsLabel" FontSize="Small">
-			</Label>
-		</StackLayout>
-		<StackLayout Grid.Row="3" Grid.Column="1" BackgroundColor="#eaffea" Orientation="Horizontal">
-			<Image HorizontalOptions="EndAndExpand" Source="small_add">
-			</Image>
-			<Label HorizontalOptions="StartAndExpand" x:Name="AdditionsLabel" FontSize="Small">
-			</Label>
-		</StackLayout>
-		<StackLayout Grid.Row="3" Grid.Column="2" BackgroundColor="#ffecec" Orientation="Horizontal">
-			<Image HorizontalOptions="EndAndExpand" Source="small_remove">
-			</Image>
-			<Label HorizontalOptions="StartAndExpand" x:Name="DeletionsLabel" FontSize="Small">
-			</Label>
-		</StackLayout>
-	</Grid>
+    <Label Grid.Row="0" Grid.ColumnSpan="3" Margin="10,5" FontSize="Micro"  x:Name="CommitDateTimeLabel" />
+    <Label Grid.Row="1" Grid.ColumnSpan="3" Margin="10,1" x:Name="CommitAuthorLabel" FontAttributes="Bold" />
+    <Label Grid.Row="2" Grid.ColumnSpan="3" Margin="10,5" FontSize="Small" x:Name="CommitDescriptionLabel" />
+
+    <StackLayout Grid.Row="3" Grid.Column="0" BackgroundColor="#FFF7B4" Orientation="Horizontal">
+      <Image HorizontalOptions="EndAndExpand" Source="small_edit"></Image>
+      <Label HorizontalOptions="StartAndExpand" x:Name="EditionsLabel" FontSize="Small">
+      </Label>
+    </StackLayout>
+    <StackLayout Grid.Row="3" Grid.Column="1" BackgroundColor="#eaffea" Orientation="Horizontal">
+      <Image HorizontalOptions="EndAndExpand" Source="small_add">
+      </Image>
+      <Label HorizontalOptions="StartAndExpand" x:Name="AdditionsLabel" FontSize="Small">
+      </Label>
+    </StackLayout>
+    <StackLayout Grid.Row="3" Grid.Column="2" BackgroundColor="#ffecec" Orientation="Horizontal">
+      <Image HorizontalOptions="EndAndExpand" Source="small_remove">
+      </Image>
+      <Label HorizontalOptions="StartAndExpand" x:Name="DeletionsLabel" FontSize="Small">
+      </Label>
+    </StackLayout>
+  </Grid>
 </ViewCell>
