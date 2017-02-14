@@ -166,6 +166,21 @@
     <AndroidResource Include="Resources\drawable-xhdpi\info.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\info.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\info.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\small_add.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\small_edit.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\small_remove.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\small_add.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\small_edit.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\small_remove.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\small_add.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\small_edit.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\small_remove.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\small_add.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\small_edit.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\small_remove.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\small_add.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\small_edit.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\small_remove.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Services\" />

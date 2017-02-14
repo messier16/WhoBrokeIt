@@ -5,7 +5,7 @@
 		Style="{StaticResource AppPage}"
 		x:Class="WhoBrokeIt.UI.Views.RepositoryDetailPage">
 	<ContentPage.Content>
-		<ListView x:Name="CommitList" HasUnevenRows="true" RowHeight="100">
+		<ListView x:Name="CommitList" HasUnevenRows="true" RowHeight="-1">
 			<ListView.ItemTemplate>
 				<DataTemplate>
 					<cells:CommitCell></cells:CommitCell>

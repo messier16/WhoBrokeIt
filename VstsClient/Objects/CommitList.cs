@@ -8,7 +8,7 @@ namespace Messier16.VstsClient.Objects
 	{
 		public string Name { get; set; }
 		public string Email { get; set; }
-		public string Date { get; set; }
+		public DateTimeOffset Date { get; set; }
 	}
 
 	public class ChangeCounts
