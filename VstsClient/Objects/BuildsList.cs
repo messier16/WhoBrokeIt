@@ -62,13 +62,13 @@ namespace Messier16.VstsClient.Objects
         public Queue Queue { get; set; }
         public string QueueTime { get; set; }
         public string Priority { get; set; }
-        public string StartTime { get; set; }
-        public string FinishTime { get; set; }
+        public DateTimeOffset StartTime { get; set; }
+		public DateTimeOffset FinishTime { get; set; }
         public string Reason { get; set; }
         public string Result { get; set; }
         public User RequestedFor { get; set; }
         public User RequestedBy { get; set; }
-        public string lastChangedDate { get; set; }
+        public DateTimeOffset LastChangedDate { get; set; }
         public User LastChangedBy { get; set; }
         public string Parameters { get; set; }
         public OrchestrationPlan OrchestrationPlan { get; set; }
