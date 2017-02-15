@@ -11,32 +11,45 @@ namespace WhoBrokeIt.UI.Views
 {
     public partial class ProjectDetailsPage : ContentPage
     {
-        string _projectId;
+		string _projectId;
+		string _repoId;
+
+		bool _initialLoad;
+
         public ProjectDetailsPage(string projectId)
         {
             _projectId = projectId;
+			_initialLoad = true;
             InitializeComponent();
         }
 
         protected override async void OnAppearing()
         {
             base.OnAppearing();
+			if (!_initialLoad) return;
+			_initialLoad = false;
 			var client = WhoBrokeItApp.RealCurrent.Client;
             var project = await client.GetProject(_projectId);
             Title = project.Name;
-			SourceControlLabel.Text = project.Capabilities?.Versioncontrol?.SourceControlType;
+			SourceControlLabel.Text = project.Capabilities?.Versioncontrol?.SourceControlType ?? "unknown";
+			SourceControlImage.Source = SourceControlLabel.Text.ToLower();
 			DescriptionLabel.Text = project.Description;
 
 			var repos = await client.GetRepositories(_projectId);
+			_repoId = repos.Value.FirstOrDefault()?.Id;
 
-
-			ReposCount.Text = repos.Value.FirstOrDefault()?.Id;
-			var tg = new TapGestureRecognizer( async (v) => 
+			if (SourceControlLabel.Text.Equals("git", StringComparison.OrdinalIgnoreCase))
 			{
-				var repo = v as Label;
-				await Navigation.PushAsync(new RepositoryDetailPage(repo.Text));
-			});
-			ReposCount.GestureRecognizers.Add(tg);
+				var tg = new TapGestureRecognizer(async (v) =>
+			   {
+				   await Navigation.PushAsync(new RepositoryDetailPage(_repoId));
+			   });
+				SourceControlControl.GestureRecognizers.Add(tg);
+			}
+			else
+			{
+				ViewCommitsImage.IsVisible = false;
+			}
 
 
 			var definitions = await client.GetBuildDefinitions(_projectId);

@@ -209,6 +209,16 @@
     <AndroidResource Include="Resources\drawable-xxxhdpi\lightbulb.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\ok.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\small_user.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\progress.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\small_time.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\progress.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\small_time.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\progress.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\small_time.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\progress.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\small_time.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\progress.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\small_time.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values-v21\styles.xml" />

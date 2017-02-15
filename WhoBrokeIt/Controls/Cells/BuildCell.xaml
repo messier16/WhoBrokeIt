@@ -6,12 +6,14 @@
 				<ColumnDefinition Width="*" />
 				<ColumnDefinition Width="40" />
 			</Grid.ColumnDefinitions>
-
-
-		<StackLayout>
-			<Label x:Name="BuildStatusLabel" FontAttributes="Bold" FontSize="Large" />
-			<Label x:Name="BuildElapsedTimeLabel" FontSize="Micro" />
-		</StackLayout>
+			<StackLayout>
+				<Label x:Name="BuildStatusLabel"  />
+				<Label x:Name="RequestedForLabel" FontAttributes="Bold" FontSize="Large" />
+				<StackLayout Orientation="Horizontal">
+					<Image Source="small_time"></Image>
+					<Label x:Name="BuildElapsedTimeLabel" FontSize="Micro" />
+				</StackLayout>
+			</StackLayout>
 			<Image Margin="5" Grid.Column="1" x:Name="BuildStatusImage" VerticalOptions="CenterAndExpand" Source="ok" />
 		</Grid>
 	</ViewCell.View>

@@ -138,6 +138,7 @@
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="Services\" />
+    <Folder Include="Controls\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -152,6 +153,7 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Helpers\Settings.cs" />
     <Compile Include="Services\AccountManagerImplementation.cs" />
+    <Compile Include="Controls\CardViewRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WhoBrokeIt\WhoBrokeIt.UI.csproj">
@@ -205,6 +207,12 @@
     <BundleResource Include="Resources\small_user.png" />
     <BundleResource Include="Resources\small_user%402x.png" />
     <BundleResource Include="Resources\small_user%403x.png" />
+    <BundleResource Include="Resources\progress.png" />
+    <BundleResource Include="Resources\progress%402x.png" />
+    <BundleResource Include="Resources\progress%403x.png" />
+    <BundleResource Include="Resources\small_time.png" />
+    <BundleResource Include="Resources\small_time%402x.png" />
+    <BundleResource Include="Resources\small_time%403x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.3.180\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.3.180\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

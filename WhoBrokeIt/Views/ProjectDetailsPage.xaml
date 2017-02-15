@@ -1,12 +1,33 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-		Style="{StaticResource AppPage}"
-             x:Class="WhoBrokeIt.UI.Views.ProjectDetailsPage">
-    <StackLayout>
-        <Label x:Name="DescriptionLabel"></Label>
-        <Label x:Name="SourceControlLabel"></Label>
-        <Label x:Name="ReposCount"></Label>
-		<StackLayout x:Name="BuildDefsStack" ></StackLayout>
-    </StackLayout>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:controls="clr-namespace:WhoBrokeIt.UI.Controls"
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		Style="{StaticResource AppPage}" x:Class="WhoBrokeIt.UI.Views.ProjectDetailsPage">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="50" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+		<Label Margin="10" x:Name="DescriptionLabel" HorizontalTextAlignment="Center" />
+		<controls:CardView Margin="5" HeightRequest="40" Grid.Row="1">
+			<Grid x:Name="SourceControlControl" >
+				<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="3*" />
+				<ColumnDefinition Width="3*" />
+				<ColumnDefinition Width="3*" />
+				</Grid.ColumnDefinitions>
+
+				<Image x:Name="SourceControlImage" Grid.Column="0" Source="git" HorizontalOptions="EndAndExpand" />
+			<Label x:Name="SourceControlLabel" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Start" />
+			<Image x:Name="ViewCommitsImage" Grid.Column="2" HeightRequest="20" VerticalOptions="Center" Source="arrow_right" HorizontalOptions="CenterAndExpand" />
+		
+			</Grid>
+		</controls:CardView>
+		<Label BackgroundColor="White" FontAttributes="Bold" Grid.Row="2"
+				Text="Build definitions"></Label>
+		<StackLayout Grid.Row="3" x:Name="BuildDefsStack">
+		</StackLayout>
+	</Grid>
 </ContentPage>
