@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="WhoBrokeIt.UI.Controls.Cells.BuildCell">
+	<ViewCell.View>
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="40" />
+			</Grid.ColumnDefinitions>
+
+
+		<StackLayout>
+			<Label x:Name="BuildStatusLabel" FontAttributes="Bold" FontSize="Large" />
+			<Label x:Name="BuildElapsedTimeLabel" FontSize="Micro" />
+		</StackLayout>
+			<Image Margin="5" Grid.Column="1" x:Name="BuildStatusImage" VerticalOptions="CenterAndExpand" Source="ok" />
+		</Grid>
+	</ViewCell.View>
+</ViewCell>

@@ -181,6 +181,26 @@
     <AndroidResource Include="Resources\drawable-xxxhdpi\small_add.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\small_edit.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\small_remove.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\error.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\lightbulb.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ok.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\small_user.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\error.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\lightbulb.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ok.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\small_user.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\error.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\lightbulb.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ok.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\small_user.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\error.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\lightbulb.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ok.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\small_user.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\error.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\lightbulb.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ok.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\small_user.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Services\" />

@@ -190,6 +190,21 @@
     <BundleResource Include="Resources\small_remove.png" />
     <BundleResource Include="Resources\small_remove%402x.png" />
     <BundleResource Include="Resources\small_remove%403x.png" />
+    <BundleResource Include="Resources\error.png" />
+    <BundleResource Include="Resources\error%402x.png" />
+    <BundleResource Include="Resources\error%403x.png" />
+    <BundleResource Include="Resources\lightbulb.png" />
+    <BundleResource Include="Resources\lightbulb%402x.png" />
+    <BundleResource Include="Resources\lightbulb%403x.png" />
+    <BundleResource Include="Resources\ok.png" />
+    <BundleResource Include="Resources\ok%402x.png" />
+    <BundleResource Include="Resources\ok%403x.png" />
+    <BundleResource Include="Resources\question.png" />
+    <BundleResource Include="Resources\question%402x.png" />
+    <BundleResource Include="Resources\question%403x.png" />
+    <BundleResource Include="Resources\small_user.png" />
+    <BundleResource Include="Resources\small_user%402x.png" />
+    <BundleResource Include="Resources\small_user%403x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.3.180\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.3.180\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
