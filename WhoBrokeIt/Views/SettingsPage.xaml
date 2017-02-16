@@ -1,5 +1,23 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="WhoBrokeIt.UI.Views.SettingsPage">
-	<ContentPage.Content>
-	</ContentPage.Content>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:cells="clr-namespace:WhoBrokeIt.UI.Controls.Cells"
+    x:Class="WhoBrokeIt.UI.Views.SettingsPage"
+    Title="Settings">
+    <TableView>
+        <TableRoot>
+            <TableSection Title="Current instance">
+                <ImageCell ImageSource="lightbulb" Text="Disconnect"></ImageCell>
+                <ImageCell ImageSource="lightbulb" Text="Change token"></ImageCell>
+            </TableSection>
+            <TableSection Title="About Who broke it?">
+                <ImageCell ImageSource="lightbulb" Text="Found a bug?"></ImageCell>
+                <ImageCell ImageSource="lightbulb" Text="Have an idea for this app?"></ImageCell>
+                <ImageCell ImageSource="lightbulb" Text="Thanks to"></ImageCell>
+                <cells:BrandCell ></cells:BrandCell>
+            </TableSection>
+        </TableRoot>
+
+    </TableView>
 </ContentPage>

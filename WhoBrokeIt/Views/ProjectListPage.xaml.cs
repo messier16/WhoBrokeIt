@@ -24,7 +24,13 @@ namespace WhoBrokeIt.UI.Views
 				Text = "Settings",
 				Icon = "settings"
 			};
+            settingsButton.Clicked += SettingsButton_Clicked;
 			ToolbarItems.Add(settingsButton);
+        }
+
+        private async void SettingsButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new SettingsPage());
         }
 
         protected override async void OnAppearing()
