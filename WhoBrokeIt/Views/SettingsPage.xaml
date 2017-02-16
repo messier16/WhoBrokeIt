@@ -8,13 +8,14 @@
     <TableView>
         <TableRoot>
             <TableSection Title="Current instance">
-                <ImageCell ImageSource="lightbulb" Text="Disconnect"></ImageCell>
-                <ImageCell ImageSource="lightbulb" Text="Change token"></ImageCell>
+                <ImageCell ImageSource="disconnect" Text="Disconnect"></ImageCell>
+                <ImageCell ImageSource="edit_token" Text="Change token"></ImageCell>
             </TableSection>
             <TableSection Title="About Who broke it?">
-                <ImageCell ImageSource="lightbulb" Text="Found a bug?"></ImageCell>
+                <ImageCell ImageSource="bug" Text="Found a bug?"></ImageCell>
                 <ImageCell ImageSource="lightbulb" Text="Have an idea for this app?"></ImageCell>
-                <ImageCell ImageSource="lightbulb" Text="Thanks to"></ImageCell>
+                <ImageCell ImageSource="library" Text="Thanks to"></ImageCell>
+                <ImageCell ImageSource="github" Text="Grab the source code"></ImageCell>
                 <cells:BrandCell ></cells:BrandCell>
             </TableSection>
         </TableRoot>
