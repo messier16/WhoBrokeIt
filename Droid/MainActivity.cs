@@ -11,7 +11,7 @@ using WhoBrokeIt.Droid.Services;
 
 namespace WhoBrokeIt.Droid
 {
-	[Activity(Label = "WhoBrokeIt.Droid", Icon = "@drawable/icon", Theme = "@style/MyTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+	[Activity(Label = "WhoBrokeIt.Droid", Icon = "@drawable/icon", Theme = "@style/MyTheme", ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
 	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
 	{
 		protected override void OnCreate(Bundle bundle)
@@ -24,11 +24,12 @@ namespace WhoBrokeIt.Droid
 			global::Xamarin.Forms.Forms.Init(this, bundle);
 
 
-            var accountManager = new AccountManagerImplementation();
-            var instance = WhoBrokeIt.UI.Helpers.Settings.VisualStudioInstance;
-            var tokent = accountManager.GetTokenForInstance(instance);
+            var bndl = this.Intent.Extras;
 
-            var formsApp = new UI.WhoBrokeItApp(instance, tokent);
+            var instance = bndl.GetString("instance");
+            var token = bndl.GetString("token");
+
+            var formsApp = new UI.WhoBrokeItApp(instance, token);
             
             LoadApplication(formsApp);
 		}

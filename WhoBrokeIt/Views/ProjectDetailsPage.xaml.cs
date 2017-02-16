@@ -52,8 +52,12 @@ namespace WhoBrokeIt.UI.Views
 			}
 			else 
 			{
-				BuildDefsStack.Children.Add(
-					new Image { Source = "build_definition" });
+                var emptyBuildDefinitions = new ListEmptyView("build_definition", "There are no build definitions")
+                {
+                    Margin = 5,
+                    Padding = 5
+                };
+				BuildDefsStack.Children.Add(emptyBuildDefinitions);
 			}
         }
 
