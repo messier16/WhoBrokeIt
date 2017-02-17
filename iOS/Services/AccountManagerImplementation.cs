@@ -15,9 +15,14 @@ namespace WhoBrokeIt.iOS.Services
 		}
 
 		public void EraseAll()
-		{
-			throw new NotImplementedException();
-		}
+        {
+            var accStore = AccountStore.Create();
+            var accounts = accStore.FindAccountsForService("visualstudio");
+            foreach (var item in accounts)
+            {
+                accStore.Delete(item, "visualstudio");
+            }
+        }
 
 		public string GetTokenForInstance(string instance)
 		{

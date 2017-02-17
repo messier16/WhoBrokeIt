@@ -9,24 +9,56 @@ namespace WhoBrokeIt.UI.Views
 {
 	public partial class SetKeysPage : ContentPage
 	{
-		public SetKeysPage()
+        bool _resetToken;
+		public SetKeysPage(bool resetToken = false)
 		{
 			InitializeComponent();
-            InstanceEntry.Text = Settings.VisualStudioInstance;
-		}
+            _resetToken = resetToken;
+            if(resetToken)
+            {
+                InstanceEntry.IsEnabled = false;
+                CancelButton.IsVisible = true;
+            }
+            InstanceEntry.Text = "heuristicasoluciones";// Settings.VisualStudioInstance;
+            TokentEntry.Text = "qrceppryv4k2pq66jdiggeqqkcsju2netrx7p2bien645hssuyoa";
+
+        }
 
 		async void Handle_Clicked(object sender, System.EventArgs e)
 		{
 			Settings.VisualStudioInstance = InstanceEntry.Text;
 
             // Replace client
-			WhoBrokeItApp.RealCurrent.Client = new TeamServicesClient(InstanceEntry.Text,
+			var client = new TeamServicesClient(InstanceEntry.Text,
 												TokentEntry.Text);
+            var connectionStatus = await client.Probe();
             // TODO: check credentials
-			var accMgr = DependencyService.Get<IAccountManager>();
-			accMgr.SaveTokenForInstance(InstanceEntry.Text, TokentEntry.Text);
+            if(connectionStatus == 200)
+            {
+                WhoBrokeItApp.RealCurrent.Client = client;
 
-			await Navigation.PushAsync(new ProjectListPage());
+                var accMgr = DependencyService.Get<IAccountManager>();
+                accMgr.SaveTokenForInstance(InstanceEntry.Text, TokentEntry.Text);
+                if (!_resetToken)
+                {
+                    WhoBrokeItApp.RealCurrent.MainPage = new NavigationPage(new ProjectListPage());
+                }
+                else
+                {
+                    await Navigation.PopAsync();
+                }
+            }
+            else
+            {
+                Acr.UserDialogs.UserDialogs.Instance.ShowError("Error de conexión");
+            }
 		}
-	}
+
+
+        async void HandleCancel_Clicked(object sender, System.EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
+
+    }
 }

@@ -24,10 +24,11 @@ namespace WhoBrokeIt.Droid
 
             var accountManager = new AccountManagerImplementation();
             var instance = WhoBrokeIt.UI.Helpers.Settings.VisualStudioInstance;
-            var tokent = accountManager.GetTokenForInstance(instance);
-
+            var token = accountManager.GetTokenForInstance(instance);
 
             var intent = new Intent(this, typeof(MainActivity));
+            intent.PutExtra("instance", instance);
+            intent.PutExtra("token", token);
             StartActivity(intent);
         }
     }

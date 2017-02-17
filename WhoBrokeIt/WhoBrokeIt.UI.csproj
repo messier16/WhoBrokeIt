@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Controls\Cells\BrandCell.cs" />
+    <Compile Include="Controls\Cells\MenuCell.cs" />
     <Compile Include="Controls\ListEmptyView.xaml.cs">
       <DependentUpon>ListEmptyView.xaml</DependentUpon>
     </Compile>

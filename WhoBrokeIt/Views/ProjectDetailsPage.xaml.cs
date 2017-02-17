@@ -31,25 +31,24 @@ namespace WhoBrokeIt.UI.Views
 			var client = WhoBrokeItApp.RealCurrent.Client;
             var project = await client.GetProject(_projectId);
             Title = project.Name;
-			SourceControlLabel.Text = project.Capabilities?.Versioncontrol?.SourceControlType ?? "unknown";
-			SourceControlImage.Source = SourceControlLabel.Text.ToLower();
+            var sourceControl = project.Capabilities?.Versioncontrol?.SourceControlType ?? "unknown";
+            //SourceControlButton.Text = sourceControl;
+            SourceControlImage.Source = sourceControl.ToLower();
 			DescriptionLabel.Text = project.Description;
+            DescriptionLabel.FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
 
-			var repos = await client.GetRepositories(_projectId);
+            var repos = await client.GetRepositories(_projectId);
 			_repoId = repos.Value.FirstOrDefault()?.Id;
 
-			if (SourceControlLabel.Text.Equals("git", StringComparison.OrdinalIgnoreCase))
+			if (sourceControl.Equals("git", StringComparison.OrdinalIgnoreCase))
 			{
-				var tg = new TapGestureRecognizer(async (v) =>
-			   {
-				   await Navigation.PushAsync(new RepositoryDetailPage(_repoId));
-			   });
-				SourceControlControl.GestureRecognizers.Add(tg);
+                SourceControlButton.IsEnabled = true;
+                SourceControlButton.Clicked += SourceControlButton_Clicked;
 			}
 			else
-			{
-				ViewCommitsImage.IsVisible = false;
-			}
+            {
+                SourceControlButton.IsEnabled = false;
+            }
 
 
 			var definitions = await client.GetBuildDefinitions(_projectId);
@@ -72,6 +71,11 @@ namespace WhoBrokeIt.UI.Views
                 };
 				BuildDefsStack.Children.Add(emptyBuildDefinitions);
 			}
+        }
+
+        private async void SourceControlButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new RepositoryDetailPage(_repoId));
         }
 
         private async void BuildDefView_BuildTapped(object sender, BasicBuildDefinition e)

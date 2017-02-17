@@ -8,6 +8,8 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using WhoBrokeIt.Droid.Services;
+using Acr.UserDialogs;
+using Xamarin.Forms;
 
 namespace WhoBrokeIt.Droid
 {
@@ -22,12 +24,9 @@ namespace WhoBrokeIt.Droid
 			base.OnCreate(bundle);
 
 			global::Xamarin.Forms.Forms.Init(this, bundle);
-
-
-            var bndl = this.Intent.Extras;
-
-            var instance = bndl.GetString("instance");
-            var token = bndl.GetString("token");
+            UserDialogs.Init(() => (Activity)Forms.Context);
+            var instance = Intent.Extras.GetString("instance");
+            var token = Intent.Extras.GetString("token");
 
             var formsApp = new UI.WhoBrokeItApp(instance, token);
             

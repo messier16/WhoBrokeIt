@@ -8,17 +8,16 @@
     <TableView>
         <TableRoot>
             <TableSection Title="Current instance">
-                <ImageCell ImageSource="disconnect" Text="Disconnect"></ImageCell>
-                <ImageCell ImageSource="edit_token" Text="Change token"></ImageCell>
+                <cells:MenuCell Tapped="SettingCellTapped" x:Name="DisconnectCell" ImageSource="disconnect" Text="Disconnect"></cells:MenuCell>
+                <cells:MenuCell Tapped="SettingCellTapped" x:Name="EditTokenCell" ImageSource="edit_token" Text="Change token"></cells:MenuCell>
             </TableSection>
             <TableSection Title="About Who broke it?">
-                <ImageCell ImageSource="bug" Text="Found a bug?"></ImageCell>
-                <ImageCell ImageSource="lightbulb" Text="Have an idea for this app?"></ImageCell>
-                <ImageCell ImageSource="library" Text="Thanks to"></ImageCell>
-                <ImageCell ImageSource="github" Text="Grab the source code"></ImageCell>
-                <cells:BrandCell ></cells:BrandCell>
+                <cells:MenuCell Tapped="SettingCellTapped" x:Name="ReportBugCell"  ImageSource="bug" Text="Found a bug?"></cells:MenuCell>
+                <cells:MenuCell Tapped="SettingCellTapped" x:Name="IdeaCell" ImageSource="lightbulb" Text="Have an idea for this app?"></cells:MenuCell>
+                <cells:MenuCell Tapped="SettingCellTapped" x:Name="ThanksToCell" ImageSource="library" Text="Thanks to"></cells:MenuCell>
+                <cells:MenuCell Tapped="SettingCellTapped" x:Name="SourceCell" ImageSource="github" Text="Grab the source code"></cells:MenuCell>
+                <cells:BrandCell Tapped="SettingCellTapped" x:Name="BrandCell"></cells:BrandCell>
             </TableSection>
         </TableRoot>
-
     </TableView>
 </ContentPage>
