@@ -170,6 +170,11 @@
     <AndroidResource Include="Resources\drawable-xhdpi\github.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\github.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\github.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_launcher.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Tabbar.axml" />
