@@ -132,7 +132,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AccountManagerImplementation.cs" />
     <Compile Include="SplashActivity.cs" />
-    <Compile Include="Helpers\Settings.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -170,6 +169,11 @@
     <AndroidResource Include="Resources\drawable-xhdpi\github.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\github.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\github.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_launcher.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Tabbar.axml" />
@@ -268,6 +272,9 @@
       <Project>{497BD353-6708-4C6F-9C9D-25EB7C52DFDB}</Project>
       <Name>WhoBrokeIt.UI</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Helpers\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets')" />

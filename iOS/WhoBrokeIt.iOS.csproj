@@ -146,12 +146,22 @@
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon29%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon29%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon40%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon40%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon57.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon57%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon60%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon60%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="Services\" />
     <Folder Include="Controls\" />
     <Folder Include="Controls\Cells\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -172,7 +182,6 @@
       <DependentUpon>BrandCell.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\Cells\BrandCellRenderer.cs" />
-    <Compile Include="Helpers\Settings.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WhoBrokeIt\WhoBrokeIt.UI.csproj">
