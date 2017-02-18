@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
   <item>
-    <color android:color="#2d2d30"/>
+    <color android:color="#68217A"/>
   </item>
   <item>
     <bitmap
-        android:src="@drawable/lightbulb"
+        android:src="@drawable/splash"
         android:tileMode="disabled"
         android:gravity="center"/>
   </item>
