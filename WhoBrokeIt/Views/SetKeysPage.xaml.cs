@@ -19,8 +19,8 @@ namespace WhoBrokeIt.UI.Views
                 InstanceEntry.IsEnabled = false;
                 CancelButton.IsVisible = true;
             }
-            InstanceEntry.Text = "heuristicasoluciones";// Settings.VisualStudioInstance;
-            TokentEntry.Text = "qrceppryv4k2pq66jdiggeqqkcsju2netrx7p2bien645hssuyoa";
+            InstanceEntry.Text = "--";// Settings.VisualStudioInstance;
+            TokentEntry.Text = "--";
 
         }
 
@@ -32,7 +32,6 @@ namespace WhoBrokeIt.UI.Views
 			var client = new TeamServicesClient(InstanceEntry.Text,
 												TokentEntry.Text);
             var connectionStatus = await client.Probe();
-            // TODO: check credentials
             if(connectionStatus == 200)
             {
                 WhoBrokeItApp.RealCurrent.Client = client;
@@ -41,7 +40,7 @@ namespace WhoBrokeIt.UI.Views
                 accMgr.SaveTokenForInstance(InstanceEntry.Text, TokentEntry.Text);
                 if (!_resetToken)
                 {
-                    WhoBrokeItApp.RealCurrent.MainPage = new NavigationPage(new ProjectListPage());
+                    WhoBrokeItApp.RealCurrent.ChangeMainPage(new ProjectListPage());
                 }
                 else
                 {

@@ -5,7 +5,7 @@
     xmlns:cells="clr-namespace:WhoBrokeIt.UI.Controls.Cells"
     x:Class="WhoBrokeIt.UI.Views.SettingsPage"
     Title="Settings">
-    <TableView>
+    <TableView HasUnevenRows="true" HeightRequest="-1">
         <TableRoot>
             <TableSection Title="Current instance">
                 <cells:MenuCell Tapped="SettingCellTapped" x:Name="DisconnectCell" ImageSource="disconnect" Text="Disconnect"></cells:MenuCell>

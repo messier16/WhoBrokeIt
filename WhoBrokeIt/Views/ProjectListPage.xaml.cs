@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using Messier16.VstsClient.Objects;
 using WhoBrokeIt.UI.Helpers;
 using Xamarin.Forms;
+using Acr.UserDialogs;
 
 namespace WhoBrokeIt.UI.Views
 {
@@ -39,6 +40,16 @@ namespace WhoBrokeIt.UI.Views
             if (!_firstLoad) return;
 
             var client = WhoBrokeItApp.RealCurrent.Client;
+
+			var status = await client.Probe();
+			if (status == 401)
+			{
+				await UserDialogs.Instance.AlertAsync("Parece que tu token ha expirado, debes establecer un nuevo token para volver a tener acceso",
+												 "Token expirado", "Aceptar");
+				WhoBrokeItApp.RealCurrent.ReturnToKeyPage();
+				return;
+			}
+
             var projects = await client.GetProjects();
 			BasicProjectGroup.SetProjects(projects.Value);
 			Projects.ItemsSource = BasicProjectGroup.All;

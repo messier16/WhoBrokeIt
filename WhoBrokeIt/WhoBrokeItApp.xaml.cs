@@ -25,13 +25,8 @@ namespace WhoBrokeIt.UI
                 Client = new TeamServicesClient(instance, token);
                 startingPage = new ProjectListPage();
             }
+			ChangeMainPage(startingPage);
 
-			var navMainPage = new NavigationPage(startingPage);
-
-			navMainPage.BarBackgroundColor = VisualStudioColor;
-			navMainPage.BarTextColor = Color.White;
-
-			MainPage = navMainPage;
 		}
 
         public TeamServicesClient Client { get; set; }
@@ -41,9 +36,24 @@ namespace WhoBrokeIt.UI
 		public Color VisualStudioBackgroundColor => (Color)Resources["VisualStudioBackgroundColor"];
 		#endregion
 
+		public void ChangeMainPage(Page p)
+		{
+
+			var navMainPage = new NavigationPage(p);
+
+			navMainPage.BarBackgroundColor = VisualStudioColor;
+			navMainPage.BarTextColor = Color.White;
+			MainPage = navMainPage;
+		}
+
 		public static WhoBrokeItApp RealCurrent
 		{
 			get { return Application.Current as WhoBrokeItApp; }
+		}
+
+		internal void ReturnToKeyPage()
+		{
+			ChangeMainPage(new SetKeysPage());
 		}
 	}
 }

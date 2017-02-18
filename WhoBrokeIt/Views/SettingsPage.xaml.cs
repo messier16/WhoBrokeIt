@@ -35,7 +35,7 @@ namespace WhoBrokeIt.UI.Views
             {
                 var accMgr = DependencyService.Get<IAccountManager>();
                 accMgr.EraseAll();
-                WhoBrokeItApp.RealCurrent.MainPage = new NavigationPage(new Views.SetKeysPage());
+				WhoBrokeItApp.RealCurrent.ChangeMainPage(new Views.SetKeysPage());
             }
         }
 

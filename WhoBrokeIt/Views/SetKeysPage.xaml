@@ -1,24 +1,23 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage 
-		xmlns="http://xamarin.com/schemas/2014/forms" 
-		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-		x:Class="WhoBrokeIt.UI.Views.SetKeysPage"
-		Style="{StaticResource AppPage}"
-		Title="Instance info">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="WhoBrokeIt.UI.Views.SetKeysPage" Style="{StaticResource AppPage}" Title="Instance info">
 	<StackLayout Spacing="20" Margin="20">
-		<Image Source="visual_studio"></Image>
-		<Entry x:Name="InstanceEntry" 
-			Keyboard="Default"
-			Placeholder=".visualstudio.com"></Entry>
-		<Editor x:Name="TokentEntry"
-				HeightRequest="100"
-			Keyboard="Text"></Editor>
-        <Button x:Name="ContinueButton" 
-			Text="Continue"
-			Clicked="Handle_Clicked"></Button>
-        <Button x:Name="CancelButton" 
-			Text="Cancel" IsVisible="False"
-			Clicked="HandleCancel_Clicked"></Button>
-        <Image Source="info"></Image>
+		<Image Source="visual_studio">
+		</Image>
+		<Entry x:Name="InstanceEntry" Keyboard="Default" Placeholder=".visualstudio.com">
+		</Entry>
+		<Editor x:Name="TokentEntry" HeightRequest="100" Keyboard="Text">
+		</Editor>
+		<StackLayout Orientation="Horizontal">
+			<Button x:Name="CancelButton" Text="Cancel" 
+					HorizontalOptions="CenterAndExpand"
+					IsVisible="False" Clicked="HandleCancel_Clicked">
+			</Button>
+			<Button x:Name="ContinueButton" Text="Continue" 
+					HorizontalOptions="CenterAndExpand"
+					Clicked="Handle_Clicked">
+			</Button>
+		</StackLayout>
+		<Image Source="info">
+		</Image>
 	</StackLayout>
 </ContentPage>
