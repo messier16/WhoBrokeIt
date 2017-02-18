@@ -13,11 +13,13 @@ namespace WhoBrokeIt.iOS.Controls.Cells
 		static BrandCell()
 		{
 			Nib = UINib.FromName("BrandCell", NSBundle.MainBundle);
+
 		}
 
 		protected BrandCell(IntPtr handle) : base(handle)
 		{
 			// Note: this .ctor should not contain any initialization logic.
 		}
+
 	}
 }
