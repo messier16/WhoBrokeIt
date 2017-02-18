@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="WhoBrokeIt.UI.Controls.ListEmptyView">
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:controls="clr-namespace:WhoBrokeIt.UI.Controls"
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="WhoBrokeIt.UI.Controls.ListEmptyView">
     <ContentView.Content>
-        <Frame>
+        <controls:CardView>
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"></RowDefinition>
@@ -9,8 +11,8 @@
                 </Grid.RowDefinitions>
 
                 <Image x:Name="EmptyImage"></Image>
-                <Label x:Name="EmptyTextLabel" Grid.Row="1"></Label>
+                <Label x:Name="EmptyTextLabel" HorizontalTextAlignment="Center" Grid.Row="1"></Label>
             </Grid>
-        </Frame>
+        </controls:CardView>
     </ContentView.Content>
 </ContentView>

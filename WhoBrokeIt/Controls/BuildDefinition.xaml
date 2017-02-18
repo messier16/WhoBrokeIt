@@ -11,7 +11,7 @@
             </Grid.RowDefinitions>
 
             <Label FontAttributes="Bold" x:Name="BuildNameLabel"></Label>
-            <Label FontSize="Small" x:Name="RequestorNameLabel" Grid.Row="1"></Label>
+            <Label FontSize="Small" HorizontalTextAlignment="Center" x:Name="RequestorNameLabel" Grid.Row="1"></Label>
         </Grid>
     </controls:CardView>
 </ContentView>

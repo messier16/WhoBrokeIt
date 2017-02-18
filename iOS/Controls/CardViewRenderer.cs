@@ -19,7 +19,7 @@ namespace WhoBrokeIt.iOS.Controls
 			base.NativeView.Layer.ShadowColor = UIColor.Black.CGColor;
 			base.NativeView.Layer.ShadowOffset = new CGSize(0, 0);
 			NativeView.Layer.ShadowRadius = 2;
-			NativeView.Layer.ShadowOpacity = 0.5f;
+			NativeView.Layer.ShadowOpacity = 0.10f;
 		}
 	}
 }
