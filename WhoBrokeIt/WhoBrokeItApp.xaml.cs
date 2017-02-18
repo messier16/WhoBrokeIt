@@ -1,6 +1,8 @@
 ﻿using Messier16.VstsClient;
 using System;
 using System.Collections.Generic;
+using WhoBrokeIt.UI.Resources;
+using WhoBrokeIt.UI.Services;
 using WhoBrokeIt.UI.Views;
 using Xamarin.Forms;
 
@@ -28,6 +30,17 @@ namespace WhoBrokeIt.UI
 			ChangeMainPage(startingPage);
 
 		}
+
+        void SetLanguage()
+        {
+            if (Device.OS == TargetPlatform.iOS || Device.OS == TargetPlatform.Android)
+            {
+                var localService = DependencyService.Get<ILocalize>();
+                var ci = localService.GetCurrentCultureInfo();
+                AppStrings.Culture = ci; // set the RESX for resource localization
+                localService.SetLocale(ci); // set the Thread for locale-aware methods
+            }
+        }
 
         public TeamServicesClient Client { get; set; }
 

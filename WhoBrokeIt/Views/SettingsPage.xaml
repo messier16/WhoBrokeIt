@@ -2,20 +2,21 @@
 <ContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:xt="clr-namespace:WhoBrokeIt.UI.Extensions"
     xmlns:cells="clr-namespace:WhoBrokeIt.UI.Controls.Cells"
     x:Class="WhoBrokeIt.UI.Views.SettingsPage"
-    Title="Settings">
+    Title="{xt:Translate SettingsTitle}">
     <TableView HasUnevenRows="true" HeightRequest="-1">
         <TableRoot>
-            <TableSection Title="Current instance">
-                <cells:MenuCell Tapped="SettingCellTapped" x:Name="DisconnectCell" ImageSource="disconnect" Text="Disconnect"></cells:MenuCell>
-                <cells:MenuCell Tapped="SettingCellTapped" x:Name="EditTokenCell" ImageSource="edit_token" Text="Change token"></cells:MenuCell>
+            <TableSection Title="{xt:Translate SettingsInstance}">
+                <cells:MenuCell Tapped="SettingCellTapped" x:Name="DisconnectCell" ImageSource="disconnect" Text="{xt:Translate SettingsDisconnect}"></cells:MenuCell>
+                <cells:MenuCell Tapped="SettingCellTapped" x:Name="EditTokenCell" ImageSource="edit_token" Text="{xt:Translate SettingsChangeToken}"></cells:MenuCell>
             </TableSection>
-            <TableSection Title="About Who broke it?">
-                <cells:MenuCell Tapped="SettingCellTapped" x:Name="ReportBugCell"  ImageSource="bug" Text="Found a bug?"></cells:MenuCell>
-                <cells:MenuCell Tapped="SettingCellTapped" x:Name="IdeaCell" ImageSource="lightbulb" Text="Have an idea for this app?"></cells:MenuCell>
-                <cells:MenuCell Tapped="SettingCellTapped" x:Name="ThanksToCell" ImageSource="library" Text="Thanks to"></cells:MenuCell>
-                <cells:MenuCell Tapped="SettingCellTapped" x:Name="SourceCell" ImageSource="github" Text="Grab the source code"></cells:MenuCell>
+            <TableSection Title="{xt:Translate SettingsAbout}">
+                <cells:MenuCell Tapped="SettingCellTapped" x:Name="ReportBugCell"  ImageSource="bug" Text="{xt:Translate SettingsBug}"></cells:MenuCell>
+                <cells:MenuCell Tapped="SettingCellTapped" x:Name="IdeaCell" ImageSource="lightbulb" Text="{xt:Translate SettingsIdea}"></cells:MenuCell>
+                <cells:MenuCell Tapped="SettingCellTapped" x:Name="ThanksToCell" ImageSource="library" Text="{xt:Translate SettingsAcknowledgements}"></cells:MenuCell>
+                <cells:MenuCell Tapped="SettingCellTapped" x:Name="SourceCell" ImageSource="github" Text="{xt:Translate SettingsSourceCode}"></cells:MenuCell>
                 <cells:BrandCell Tapped="SettingCellTapped" x:Name="BrandCell"></cells:BrandCell>
             </TableSection>
         </TableRoot>

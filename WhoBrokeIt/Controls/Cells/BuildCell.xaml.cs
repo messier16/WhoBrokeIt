@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using Messier16.VstsClient.Objects;
+using WhoBrokeIt.UI.Resources;
 using Xamarin.Forms;
+using Humanizer;
 
 namespace WhoBrokeIt.UI.Controls.Cells
 {
@@ -23,11 +25,11 @@ namespace WhoBrokeIt.UI.Controls.Cells
 				string startedTime = "Not started";
 				if (!build.Status.Equals("NotStarted", StringComparison.OrdinalIgnoreCase))
 				{
-					startedTime = String.Format("{0:ddd dd, MMM yyyy at HH:mm}", build.StartTime.LocalDateTime);
+					startedTime = String.Format(AppStrings.DateAndTimeFormat, build.StartTime.LocalDateTime);
 					if (build.Status.Equals("completed", StringComparison.OrdinalIgnoreCase))
 					{
 						var elapsedTime = build.FinishTime.LocalDateTime - build.StartTime.LocalDateTime;
-						startedTime += String.Format(" - {0:#.##} minutos", elapsedTime.TotalMinutes);
+					    startedTime += elapsedTime.Humanize(2);
 						if (build.Result.Equals("succeeded", StringComparison.OrdinalIgnoreCase))
 						{
 							BuildStatusImage.Source = "ok";

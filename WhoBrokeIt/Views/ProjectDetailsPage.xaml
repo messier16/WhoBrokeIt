@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
 		xmlns:controls="clr-namespace:WhoBrokeIt.UI.Controls"
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:xt="clr-namespace:WhoBrokeIt.UI.Extensions"
 		Style="{StaticResource AppPage}" x:Class="WhoBrokeIt.UI.Views.ProjectDetailsPage">
     <Grid>
         <Grid.RowDefinitions>
@@ -17,11 +18,11 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Image x:Name="SourceControlImage" Grid.Column="0" Source="git" HorizontalOptions="EndAndExpand" />
-            <Button x:Name="SourceControlButton" Text="View commits" Grid.Column="1" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" />
+            <Button x:Name="SourceControlButton" Text="{xt:Translate ViewCommits}" Grid.Column="1" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" />
         </Grid>
         <ContentView BackgroundColor="White" Grid.Row="2" Padding="5" >
             <Label FontAttributes="Bold" 
-               Text="Build definitions"></Label>
+               Text="{xt:Translate BuildDefinitions}"></Label>
         </ContentView>
         <StackLayout Grid.Row="3" x:Name="BuildDefsStack">
         </StackLayout>

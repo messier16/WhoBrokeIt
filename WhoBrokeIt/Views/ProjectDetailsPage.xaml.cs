@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WhoBrokeIt.UI.Controls;
+using WhoBrokeIt.UI.Resources;
 using Xamarin.Forms;
 
 namespace WhoBrokeIt.UI.Views
@@ -34,7 +35,7 @@ namespace WhoBrokeIt.UI.Views
             var sourceControl = project.Capabilities?.Versioncontrol?.SourceControlType ?? "unknown";
             //SourceControlButton.Text = sourceControl;
             SourceControlImage.Source = sourceControl.ToLower();
-			DescriptionLabel.Text = project.Description;
+			DescriptionLabel.Text = project.Description ?? AppStrings.NoDescProvided;
             DescriptionLabel.FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
 
             var repos = await client.GetRepositories(_projectId);
@@ -64,7 +65,7 @@ namespace WhoBrokeIt.UI.Views
 			}
 			else 
 			{
-                var emptyBuildDefinitions = new ListEmptyView("build_definition", "There are no build definitions")
+                var emptyBuildDefinitions = new ListEmptyView("build_definition", AppStrings.NoBuildDefinitions)
                 {
                     Margin = 5,
                     Padding = 5

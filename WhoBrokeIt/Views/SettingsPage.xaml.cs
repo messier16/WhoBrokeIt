@@ -5,6 +5,7 @@ using Acr.UserDialogs;
 using Xamarin.Forms;
 using System.Threading.Tasks;
 using WhoBrokeIt.UI.Services;
+using WhoBrokeIt.UI.Resources;
 
 namespace WhoBrokeIt.UI.Views
 {
@@ -29,8 +30,8 @@ namespace WhoBrokeIt.UI.Views
 
         async Task DisconnectFromInstance()
         {
-            var confirmation = await UserDialogs.Instance.ConfirmAsync("Deseas desconectarte de esta instancia de Visual Studio Team Services?",
-                "Desconectar", "Desconectar", "Cancelar");
+            var confirmation = await UserDialogs.Instance.ConfirmAsync(AppStrings.SettingsDisconnectConfirmationMessage,
+                AppStrings.SettingsDisconnect, AppStrings.Accept, AppStrings.Cancel);
             if (confirmation)
             {
                 var accMgr = DependencyService.Get<IAccountManager>();

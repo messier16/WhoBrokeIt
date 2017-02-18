@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Messier16.VstsClient.Objects;
 using Xamarin.Forms;
 using Humanizer;
+using WhoBrokeIt.UI.Resources;
 
 namespace WhoBrokeIt.UI.Controls.Cells
 {
@@ -27,7 +28,7 @@ namespace WhoBrokeIt.UI.Controls.Cells
                 }
                 else
                 {
-                    CommitDateTimeLabel.Text = String.Format("{0:dddd dd, MMMM yyyy at HH:mm}", commitDate);
+                    CommitDateTimeLabel.Text = String.Format(AppStrings.DateAndTimeFormat, commitDate);
                 }
 				CommitAuthorLabel.Text = commit.Author.Name;
 				CommitDescriptionLabel.Text = commit.Comment;

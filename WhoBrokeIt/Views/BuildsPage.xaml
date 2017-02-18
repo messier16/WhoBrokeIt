@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-		xmlns:cells="clr-namespace:WhoBrokeIt.UI.Controls.Cells" 
-		Style="{StaticResource AppPage}"
+             xmlns:xt="clr-namespace:WhoBrokeIt.UI.Extensions"
+		    xmlns:cells="clr-namespace:WhoBrokeIt.UI.Controls.Cells" 
+		    Style="{StaticResource AppPage}"
              x:Class="WhoBrokeIt.UI.Views.BuildsPage"
-             Title="Build"
-		>
+             Title="{xt:Translate Builds}">
     <ListView x:Name="BuildsList" HasUnevenRows="true" RowHeight="-1">
         <ListView.ItemTemplate>
             <DataTemplate>
