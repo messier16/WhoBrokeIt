@@ -1,0 +1,29 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhoBrokeIt.UI", "WhoBrokeIt\WhoBrokeIt.UI.csproj", "{497BD353-6708-4C6F-9C9D-25EB7C52DFDB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Messier16.VstsClient", "VstsClient\Messier16.VstsClient.csproj", "{8CC010CD-306B-4D2F-9DB4-C89E7C7DD09B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhoBrokeIt.Droid", "Droid\WhoBrokeIt.Droid.csproj", "{0806E96C-10CE-4EB4-BEED-1845B2510104}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{497BD353-6708-4C6F-9C9D-25EB7C52DFDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{497BD353-6708-4C6F-9C9D-25EB7C52DFDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{497BD353-6708-4C6F-9C9D-25EB7C52DFDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{497BD353-6708-4C6F-9C9D-25EB7C52DFDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CC010CD-306B-4D2F-9DB4-C89E7C7DD09B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CC010CD-306B-4D2F-9DB4-C89E7C7DD09B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CC010CD-306B-4D2F-9DB4-C89E7C7DD09B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CC010CD-306B-4D2F-9DB4-C89E7C7DD09B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0806E96C-10CE-4EB4-BEED-1845B2510104}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0806E96C-10CE-4EB4-BEED-1845B2510104}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0806E96C-10CE-4EB4-BEED-1845B2510104}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0806E96C-10CE-4EB4-BEED-1845B2510104}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
