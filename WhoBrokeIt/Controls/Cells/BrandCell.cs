@@ -9,5 +9,9 @@ namespace WhoBrokeIt.UI.Controls.Cells
 {
     public class BrandCell : ViewCell
     {
-    }
+		public BrandCell()
+		{
+			Height = 220;
+		}
+	}
 }

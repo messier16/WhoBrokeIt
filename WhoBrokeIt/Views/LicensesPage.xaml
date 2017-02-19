@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:xt="clr-namespace:WhoBrokeIt.UI.Extensions"
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="WhoBrokeIt.UI.Views.LicensesPage"
+		Title="{xt:Translate SettingsAcknowledgements}">
+	<ScrollView Padding="10">
+		<StackLayout>
+		<Label Text="{xt:Translate ThanksText}" ></Label>
+		<Label Text="{xt:Translate LicenseText}"></Label>
+			</StackLayout>
+	</ScrollView>
+</ContentPage>

@@ -42,11 +42,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppStrings.resx</DependentUpon>
     </Compile>
-    <Compile Include="Resources\AppStrings.es.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AppStrings.es.resx</DependentUpon>
-    </Compile>
     <Compile Include="Services\PlatformCulture.cs" />
     <Compile Include="Services\ILocalize.cs" />
     <Compile Include="Views\BuildsPage.xaml.cs">
@@ -82,6 +77,9 @@
       <DependentUpon>BuildCell.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\CardView.cs" />
+    <Compile Include="Views\LicensesPage.xaml.cs">
+      <DependentUpon>LicensesPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
@@ -147,6 +145,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Cells\BuildCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LicensesPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
