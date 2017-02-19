@@ -4,24 +4,29 @@
              xmlns:xt="clr-namespace:WhoBrokeIt.UI.Extensions"
              x:Class="WhoBrokeIt.UI.Views.SetKeysPage" 
              Style="{StaticResource AppPage}" Title="Instance info">
-	<StackLayout Spacing="20" Margin="20">
-		<Image Source="visual_studio">
-		</Image>
-		<Entry x:Name="InstanceEntry" Keyboard="Default" Placeholder=".visualstudio.com">
-		</Entry>
-		<Editor x:Name="TokentEntry" HeightRequest="100" Keyboard="Text">
-		</Editor>
-		<StackLayout Orientation="Horizontal">
-            <Button x:Name="CancelButton" Text="{xt:Translate Cancel}" 
-					HorizontalOptions="CenterAndExpand"
-					IsVisible="False" Clicked="HandleCancel_Clicked">
-			</Button>
-            <Button x:Name="ContinueButton" Text="{xt:Translate Accept}" 
-					HorizontalOptions="CenterAndExpand"
-					Clicked="Handle_Clicked">
-			</Button>
+	<ScrollView>
+		<StackLayout Spacing="10" Margin="10">
+			<Image Source="visual_studio">
+			</Image>
+			<Label Text="{xt:Translate TokenInstructions}" FontSize="Micro" HorizontalTextAlignment="Center"></Label>
+			<Entry x:Name="InstanceEntry" Keyboard="Default" Placeholder="______________.visualstudio.com">
+			</Entry>
+			<Editor x:Name="TokentEntry" HeightRequest="100" Keyboard="Text">
+			</Editor>
+			<StackLayout Orientation="Horizontal">
+	            <Button x:Name="CancelButton" Text="{xt:Translate Cancel}" 
+						Style="{StaticResource BrandedButton}"
+						HorizontalOptions="CenterAndExpand"
+						IsVisible="False" Clicked="HandleCancel_Clicked">
+				</Button>
+	            <Button x:Name="ContinueButton" Text="{xt:Translate Accept}" 
+						Style="{StaticResource BrandedButton}"
+						HorizontalOptions="CenterAndExpand"
+						Clicked="Handle_Clicked">
+				</Button>
+			</StackLayout>
+			<Image x:Name="InfoButton" Source="info">
+			</Image>
 		</StackLayout>
-		<Image Source="info">
-		</Image>
-	</StackLayout>
+	</ScrollView>
 </ContentPage>

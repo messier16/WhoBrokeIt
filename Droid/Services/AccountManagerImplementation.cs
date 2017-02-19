@@ -10,6 +10,11 @@ namespace WhoBrokeIt.Droid.Services
 {
 	public class AccountManagerImplementation : IAccountManager
 	{
+		public static void Init()
+		{
+			var now = DateTime.Now;
+		}
+
 		public AccountManagerImplementation()
 		{
 		}

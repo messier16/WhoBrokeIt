@@ -186,4 +186,8 @@
   <data name="ThanksText" xml:space="preserve">
     <value>¿Deseas desconectarte de esta instancia de Visual Studio Team Services?</value>
   </data>
+  <data name="TokenInstructions" xml:space="preserve">
+    <value>Escribe la instancia a la que deseas conectarte y un token personal, presiona la &quot;i&quot; más abajo para saber cómo obtener un token</value>
+  </data>
+	
 </root>

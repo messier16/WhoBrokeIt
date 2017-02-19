@@ -80,6 +80,9 @@
     <Compile Include="Views\LicensesPage.xaml.cs">
       <DependentUpon>LicensesPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Resources\AppStrings.es.Designer.cs">
+      <DependentUpon>AppStrings.es.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

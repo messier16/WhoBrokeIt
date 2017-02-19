@@ -12,6 +12,15 @@
             <Style x:Key="AppPage" TargetType="ContentPage">
                 <Setter Property="BackgroundColor" Value="{StaticResource VisualStudioBackgroundColor}" />
             </Style>
+
+	      <OnPlatform x:TypeArguments="Color" Android="{StaticResource VisualStudioColor}" x:Key="BrandedButtonBackgroundColor" />
+	      <OnPlatform x:TypeArguments="Color" Android="White" iOS="{StaticResource VisualStudioColor}" x:Key="BrandedButtonTextColor" />
+
+	      
+	      <Style x:Key="BrandedButton" TargetType="Button">
+	        <Setter Property="BackgroundColor" Value="{StaticResource BrandedButtonBackgroundColor}"></Setter>
+	        <Setter Property="TextColor" Value="{StaticResource BrandedButtonTextColor}"></Setter>
+	      </Style>
 		</ResourceDictionary>
 	</Application.Resources>
 </Application>

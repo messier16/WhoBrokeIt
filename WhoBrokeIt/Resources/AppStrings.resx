@@ -181,9 +181,12 @@
     <value>Do you really want to disconnect from this instance of Visual Studio Team Services?</value>
   </data>
   <data name="LicenseText" xml:space="preserve">
-    <value>This app uses </value>
+    <value>This app uses some code from the Xamarin Evolve app, which is under MIT license. This app is also under the MIT license, see the source code for more info.</value>
   </data>
   <data name="ThanksText" xml:space="preserve">
-    <value>¿Deseas desconectarte de esta instancia de Visual Studio Team Services?</value>
+    <value></value>
+  </data>
+  <data name="TokenInstructions" xml:space="preserve">
+    <value>Write the instance to which do want to connect to and provide a personal token, tap on the &quot;i&quot; below to learn how to get a token</value>
   </data>
 </root>

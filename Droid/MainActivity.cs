@@ -25,6 +25,9 @@ namespace WhoBrokeIt.Droid
 
 			global::Xamarin.Forms.Forms.Init(this, bundle);
             UserDialogs.Init(() => (Activity)Forms.Context);
+			//LocalizeImplementation.Init();
+			//AccountManagerImplementation.Init();
+
             var instance = Intent.Extras.GetString("instance");
             var token = Intent.Extras.GetString("token");
 

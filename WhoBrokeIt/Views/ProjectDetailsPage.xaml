@@ -18,7 +18,9 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Image x:Name="SourceControlImage" Grid.Column="0" Source="git" HorizontalOptions="EndAndExpand" />
-            <Button x:Name="SourceControlButton" Text="{xt:Translate ViewCommits}" Grid.Column="1" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" />
+            <Button x:Name="SourceControlButton" 
+						Style="{StaticResource BrandedButton}"
+				Text="{xt:Translate ViewCommits}" Grid.Column="1" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" />
         </Grid>
         <ContentView BackgroundColor="White" Grid.Row="2" Padding="5" >
             <Label FontAttributes="Bold" 
