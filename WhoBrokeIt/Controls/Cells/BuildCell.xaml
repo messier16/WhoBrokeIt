@@ -6,8 +6,8 @@
 				<ColumnDefinition Width="*" />
 				<ColumnDefinition Width="40" />
 			</Grid.ColumnDefinitions>
-			<StackLayout>
-				<Label x:Name="BuildStatusLabel"  />
+			<StackLayout Padding="5">
+				<Label x:Name="BuildStatusLabel" FontSize="Small" />
 				<Label x:Name="RequestedForLabel" FontAttributes="Bold" FontSize="Large" />
 				<StackLayout Orientation="Horizontal">
 					<Image Source="small_time"></Image>

@@ -29,7 +29,7 @@ namespace WhoBrokeIt.UI.Controls.Cells
 					if (build.Status.Equals("completed", StringComparison.OrdinalIgnoreCase))
 					{
 						var elapsedTime = build.FinishTime.LocalDateTime - build.StartTime.LocalDateTime;
-					    startedTime += elapsedTime.Humanize(2);
+					    startedTime += "\n" + elapsedTime.Humanize(2);
 						if (build.Result.Equals("succeeded", StringComparison.OrdinalIgnoreCase))
 						{
 							BuildStatusImage.Source = "ok";
