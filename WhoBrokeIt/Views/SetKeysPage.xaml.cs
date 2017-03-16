@@ -15,6 +15,11 @@ namespace WhoBrokeIt.UI.Views
 		public SetKeysPage(bool resetToken = false)
 		{
 			InitializeComponent();
+
+            InstanceEntry.AutomationId = "InstanceEntry";
+            TokentEntry.AutomationId = "TokenEntry";
+            ContinueButton.AutomationId = "ContinueButton";
+
             _resetToken = resetToken;
             if(resetToken)
             {
